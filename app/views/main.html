@@ -6,13 +6,24 @@
             <div class="panel panel-primary" data-drop="true" ng-model='loveConcerts' jqyoui-droppable>
                 <div class="panel-heading">Muss ich hin!</div>
                 <div class="panel-body">
-                    <div ng-repeat="concert in loveConcerts" >
+                    <div ng-repeat="concert in loveConcerts">
 
-                        <p ng-class="alertClass(concert)" style="cursor: pointer"  data-drag="true" data-jqyoui-options="{revert: 'invalid'}" ng-model="loveConcerts" jqyoui-draggable="{index: {{$index}},animate:true,placeholder:true}" ng-hide="!concert.artist">
-                                {{concert.artist}} :: {{concert.venue}} :: {{formatDate(concert.date)}}
-                                <button class="btn btn-xs btn-warning glyphicon glyphicon-remove pull-right" ng-click="removeConcert(loveConcerts,concert)"></button>
+                        <div class="col-md-12 btn btn-xs" style="cursor: pointer;"
+                             data-drag="true"
+                             data-jqyoui-options="{revert: 'invalid'}" ng-model="allConcerts"
+                             jqyoui-draggable="{index: {{$index}},animate:true,placeholder:true}"
+                             ng-hide="!concert.artist">
+                            <div class="col-md-10 col-lg-10 col-sm-10 btn btn-xs" ng-class="alertClass(concert)"> {{concert.artist}}
+                                -
+                                {{concert.venue}} -
+                                {{formatDate(concert.date)}}
+                            </div>
 
-                        </p>
+                            <div class="col-md-2 col-lg-2 col-sm-2">
+                                <button class="btn btn-xs btn-danger glyphicon glyphicon-remove"
+                                        ng-click="removeConcert(loveConcerts,concert)"></button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -25,10 +36,23 @@
                     <div ng-repeat="concert in allConcerts">
 
 
-                        <p  class="center-block" style="cursor: pointer" ng-class="alertClass(concert)" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" ng-model="allConcerts" jqyoui-draggable="{index: {{$index}},animate:true,placeholder:true}" ng-hide="!concert.artist">
-                            {{concert.artist}} :: {{concert.venue}} :: {{formatDate(concert.date)}}
-                            <button class="btn btn-xs btn-warning glyphicon glyphicon-remove pull-right" ng-click="removeConcert(allConcerts,concert)"></button>
-                        </p>
+                        <div class="col-md-12 btn btn-xs" style="cursor: pointer;"
+                             data-drag="true"
+                             data-jqyoui-options="{revert: 'invalid'}" ng-model="allConcerts"
+                             jqyoui-draggable="{index: {{$index}},animate:true,placeholder:true}"
+                             ng-hide="!concert.artist">
+                            <div class="col-md-10 col-lg-10 col-sm-10 btn btn-xs" ng-class="alertClass(concert)"> {{concert.artist}}
+                                -
+                                {{concert.venue}} -
+                                {{formatDate(concert.date)}}
+                            </div>
+
+                            <div class="col-md-2 col-lg-2 col-sm-2">
+                                <button class="btn btn-xs btn-danger glyphicon glyphicon-remove"
+                                        ng-click="removeConcert(allConcerts,concert)"></button>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -38,20 +62,34 @@
                 <div class="panel-heading">Mal schauen!</div>
                 <div class="panel-body">
                     <div ng-repeat="concert in maybeConcerts">
-                        <p style="cursor: pointer;" ng-class="alertClass(concert)" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" ng-model="maybeConcerts" jqyoui-draggable="{index: {{$index}},animate:true,placeholder:true}" ng-hide="!concert.artist">
-                            {{concert.artist}} :: {{concert.venue}} :: {{formatDate(concert.date)}}
-                            <button class="btn btn-xs btn-warning glyphicon glyphicon-remove pull-right" ng-click="removeConcert(maybeConcerts,concert)"></button>
-                        </p>
+
+                        <div class="col-md-12 btn btn-xs" style="cursor: pointer;"
+                             data-drag="true"
+                             data-jqyoui-options="{revert: 'invalid'}" ng-model="allConcerts"
+                             jqyoui-draggable="{index: {{$index}},animate:true,placeholder:true}"
+                             ng-hide="!concert.artist">
+                            <div class="col-md-10 col-lg-10 col-sm-10 btn btn-xs" ng-class="alertClass(concert)"> {{concert.artist}}
+                                -
+                                {{concert.venue}} -
+                                {{formatDate(concert.date)}}
+                            </div>
+
+                            <div class="col-md-2 col-lg-2 col-sm-2">
+                                <button class="btn btn-xs btn-danger glyphicon glyphicon-remove"
+                                        ng-click="removeConcert(maybeConcerts,concert)"></button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-9">
-                <form name="addConcertForm" novalidate class="form-inline" role="form" >
+                <form name="addConcertForm" novalidate class="form-inline" role="form">
                     <div class="form-group">
                         <label class="sr-only">Artist</label>
-                        <input type="text" name="artist" ng-model="newConcert.artist" placeholder="Künstler" required>
+                        <input type="text" name="artist" ng-model="newConcert.artist" placeholder="Künstler"
+                               required>
                     </div>
                     <div class="form-group">
                         <label class="sr-only">Ort</label>
@@ -61,7 +99,8 @@
                         <label class="sr-only">Datum</label>
                         <input type="date" name="date" ng-model="newConcert.date" placeholder="Datum" required>
                     </div>
-                    <button ng-click="addConcert()" ng-disabled="addConcertForm.$invalid" class="btn btn-success glyphicon glyphicon-plus"
+                    <button ng-click="addConcert()" ng-disabled="addConcertForm.$invalid"
+                            class="btn btn-success glyphicon glyphicon-plus"
                             type="submit"></button>
                 </form>
             </div>
