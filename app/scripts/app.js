@@ -12,5 +12,6 @@ angular
   .module('concertAngularApp', [
     'ngCookies',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch' ,
+    'ngDragDrop'
   ]);

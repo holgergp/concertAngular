@@ -63,5 +63,8 @@ angular.module('concertAngularApp')
 
     };
 
+    $scope.startCallback = function () {
+      console.log('imdragging');
+    };
 
   }]);
