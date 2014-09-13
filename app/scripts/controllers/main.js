@@ -13,13 +13,13 @@ angular.module('concertAngularApp')
     $scope.newConcert = {
       artist: '',
       venue: '',
-      date: moment().format('L')
+      date: moment().format('D.M.YYYY')
     };
     $scope.allConcerts = [
       {
         artist: 'Blind Guardian',
         venue: 'Philipshalle',
-        date: moment().format('L')
+        date: '2013-02-08'
 
       }
     ];
@@ -27,7 +27,7 @@ angular.module('concertAngularApp')
       {
         artist: 'The Saddest Landscape',
         venue: 'Turock',
-        date: moment().format('L')
+        date: '2014-10-02'
 
       }
     ];
@@ -35,7 +35,7 @@ angular.module('concertAngularApp')
       {
         artist: 'Spaceman Spiff',
         venue: 'FFT',
-        date: moment().format('L')
+        date: '2015-02-08'
 
       }
     ];
@@ -50,21 +50,29 @@ angular.module('concertAngularApp')
     };
 
 
+    $scope.removeConcert = function (array, concert) {
+
+      var i = array.indexOf(concert);
+      if (i !== -1) {
+        array.splice(i, 1);
+      }
+
+    };
+
     $scope.alertClass = function (concert) {
       if (concertDueDateService.isConcertAboutToHappen(concert)) {
-        return 'aboutToHappen';
+        return 'bg-warning';
       }
       else if (concertDueDateService.isConcertOverdue(concert)) {
-        return 'overdue';
+        return 'bg-danger';
       }
       else {
-        return 'fine';
+        return 'bg-primary';
       }
 
     };
 
-    $scope.startCallback = function () {
-      console.log('imdragging');
+    $scope.formatDate = function (date) {
+      return concertDueDateService.formatDate(date);
     };
-
   }]);

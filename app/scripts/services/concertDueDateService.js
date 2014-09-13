@@ -17,7 +17,10 @@ angular.module('concertAngularApp').factory('concertDueDateService', function ()
   return {
     isConcertAboutToHappen: isConcertAboutToHappen,
     isConcertOverdue: isConcertOverdue,
-    isConcertDateFine: isConcertDateFine
+    isConcertDateFine: isConcertDateFine,
+    formatDate: function (date) {
+      return moment(date).format('D.M.YYYY');
+    }
   };
 
 

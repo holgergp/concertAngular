@@ -8,9 +8,11 @@
                 <div class="panel-body">
                     <div ng-repeat="concert in loveConcerts" >
 
-                        <div class="panel panel-default"style="cursor: pointer"  ng-class="alertClass(concert)" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" ng-model="loveConcerts" jqyoui-draggable="{index: {{$index}},animate:true,placeholder:true}" ng-hide="!concert.artist">
-                            {{concert.artist}} :: {{concert.venue}} :: {{concert.date}}
-                        </div>
+                        <p ng-class="alertClass(concert)" style="cursor: pointer"  data-drag="true" data-jqyoui-options="{revert: 'invalid'}" ng-model="loveConcerts" jqyoui-draggable="{index: {{$index}},animate:true,placeholder:true}" ng-hide="!concert.artist">
+                                {{concert.artist}} :: {{concert.venue}} :: {{formatDate(concert.date)}}
+                                <button class="btn btn-xs btn-warning glyphicon glyphicon-remove pull-right" ng-click="removeConcert(loveConcerts,concert)"></button>
+
+                        </p>
                     </div>
                 </div>
             </div>
@@ -23,10 +25,10 @@
                     <div ng-repeat="concert in allConcerts">
 
 
-                      <!--  "{index: {{$index}},placeholder:true,animate:true, onStart:'startCallback(item, $index)', onStop: 'stopCallback', onDrag: 'dragCallback'}"-->
-                        <div class="panel panel-default" style="cursor: pointer" ng-class="alertClass(concert)" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" ng-model="allConcerts" jqyoui-draggable="{index: {{$index}},animate:true,placeholder:true}" ng-hide="!concert.artist">
-                            {{concert.artist}} :: {{concert.venue}} :: {{concert.date}}
-                        </div>
+                        <p  class="center-block" style="cursor: pointer" ng-class="alertClass(concert)" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" ng-model="allConcerts" jqyoui-draggable="{index: {{$index}},animate:true,placeholder:true}" ng-hide="!concert.artist">
+                            {{concert.artist}} :: {{concert.venue}} :: {{formatDate(concert.date)}}
+                            <button class="btn btn-xs btn-warning glyphicon glyphicon-remove pull-right" ng-click="removeConcert(allConcerts,concert)"></button>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -36,9 +38,10 @@
                 <div class="panel-heading">Mal schauen!</div>
                 <div class="panel-body">
                     <div ng-repeat="concert in maybeConcerts">
-                        <div class="panel panel-default" style="cursor: pointer" ng-class="alertClass(concert)" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" ng-model="maybeConcerts" jqyoui-draggable="{index: {{$index}},animate:true,placeholder:true}" ng-hide="!concert.artist">
-                            {{concert.artist}} :: {{concert.venue}} :: {{concert.date}}
-                        </div>
+                        <p style="cursor: pointer;" ng-class="alertClass(concert)" data-drag="true" data-jqyoui-options="{revert: 'invalid'}" ng-model="maybeConcerts" jqyoui-draggable="{index: {{$index}},animate:true,placeholder:true}" ng-hide="!concert.artist">
+                            {{concert.artist}} :: {{concert.venue}} :: {{formatDate(concert.date)}}
+                            <button class="btn btn-xs btn-warning glyphicon glyphicon-remove pull-right" ng-click="removeConcert(maybeConcerts,concert)"></button>
+                        </p>
                     </div>
                 </div>
             </div>
