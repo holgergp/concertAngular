@@ -1,6 +1,10 @@
 {
   "name": "concertangular",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "repository" :
+  { "type" : "git"
+  , "url" : "https://github.com/holgergp/concertAngular.git"
+  }
   "dependencies": {},
   "devDependencies": {
     "grunt": "^0.4.5",
