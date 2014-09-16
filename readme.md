@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/holgergp/concertAngular.svg)](https://travis-ci.org/holgergp/concertAngular)
+
 Demo application to compare various client side mvc approaches 
 
 Prerequisites
