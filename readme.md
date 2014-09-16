@@ -8,8 +8,8 @@ Prerequisites
 
 Setup your environment:
 -----------------------
--  `npm install 
--  `bower install
+-  <code>npm install </code>
+-  <code>bower install</code>
 
 Then start the node server:
 <code>grunt serve</code>
