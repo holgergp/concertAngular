@@ -12,4 +12,4 @@ Setup your environment:
 -  `bower install
 
 Then start the node server:
-`grunt serve
+<code>grunt serve</code>
