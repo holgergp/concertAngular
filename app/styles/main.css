@@ -94,3 +94,9 @@ body {
 .fine {
     background-color: green;
 }
+
+.links {
+    margin-top: 3em;
+    text-align: center;
+    font-size: 1.7em;
+}
