@@ -1,6 +1,8 @@
 [![Build Status](https://travis-ci.org/holgergp/concertAngular.svg)](https://travis-ci.org/holgergp/concertAngular)
 
-Demo application to compare various client side mvc approaches. This time using angular.js
+Demo application to compare various client side mvc approaches. This time using angular.js.
+
+Scaffolding done using [Yeoman](http://yeoman.io/) and the [Angular Generator] (https://github.com/yeoman/generator-angular).
 
 Prerequisites
 --------------
