@@ -3,11 +3,11 @@
 angular.module('concertAngularApp').factory('concertDueDateService', function () {
 
   var isConcertOverdue = function (concert) {
-    return  moment(concert.date).isBefore(moment());
+    return  moment(concert.date,'DD.MM.YYYY').isBefore(moment());
   };
 
   var isConcertAboutToHappen = function (concert) {
-    return moment().add(15, 'days').isAfter(moment(concert.date)) && !isConcertOverdue(concert);
+    return moment().add(15, 'days').isAfter(moment(concert.date,'DD.MM.YYYY')) && !isConcertOverdue(concert);
   };
 
   var isConcertDateFine = function (concert) {
@@ -19,7 +19,7 @@ angular.module('concertAngularApp').factory('concertDueDateService', function ()
     isConcertOverdue: isConcertOverdue,
     isConcertDateFine: isConcertDateFine,
     formatDate: function (date) {
-      return moment(date).format('D.M.YYYY');
+      return moment(date).format('DD.MM.YYYY');
     }
   };
 

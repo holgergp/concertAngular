@@ -13,13 +13,13 @@ angular.module('concertAngularApp')
     $scope.newConcert = {
       artist: '',
       venue: '',
-      date: moment().format('D.M.YYYY')
+      date: moment().format('DD.MM.YYYY')
     };
     $scope.allConcerts = [
       {
         artist: 'Blind Guardian',
         venue: 'Philipshalle',
-        date: '2013-02-08'
+        date: '02.08.2013'
 
       }
     ];
@@ -27,7 +27,7 @@ angular.module('concertAngularApp')
       {
         artist: 'The Saddest Landscape',
         venue: 'Turock',
-        date: '2014-10-02'
+        date: '02.10.2014'
 
       }
     ];
@@ -35,7 +35,7 @@ angular.module('concertAngularApp')
       {
         artist: 'Spaceman Spiff',
         venue: 'FFT',
-        date: '2015-02-08'
+        date: '02.08.2015'
 
       }
     ];
@@ -45,7 +45,7 @@ angular.module('concertAngularApp')
       $scope.newConcert = {
         artist: '',
         venue: '',
-        date: moment().format('L')
+        date: moment().format('DD.MM.YYYY')
       };
     };
 
